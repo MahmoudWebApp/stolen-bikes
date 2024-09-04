@@ -11,9 +11,9 @@ export const BikesApi = createApi({
     }),
     getStolenBikes: builder.query({
       query: (filter: IFilter) =>
-        `${baseUrl}?page=${filter.page}&per_page=${filter.per_page}
+        `${baseUrl}?page=${filter.page}&per_page=${filter.per_page}&query=
       ${
-        filter.title !== "" ? `&query=${filter.title}` : null
+        filter.title !== "" ? `${filter.title}` : ''
       }&location=Munich&stolenness=stolen`,
     }),
   }),
