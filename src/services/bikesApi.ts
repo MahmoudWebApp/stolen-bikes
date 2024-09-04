@@ -14,7 +14,7 @@ export const BikesApi = createApi({
         `${baseUrl}?page=${filter.page}&per_page=${filter.per_page}
       ${
         filter.title !== "" ? `&query=${filter.title}` : ""
-      }&&location=Munich&stolenness=stolen`,
+      }&location=Munich&stolenness=stolen`,
     }),
   }),
 });
