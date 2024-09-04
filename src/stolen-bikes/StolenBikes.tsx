@@ -57,7 +57,7 @@ const StolenBikes: React.FC = () => {
                         </div>
                         {filter.title !== '' ? <></> :
                             <BikePagination
-                                pageSize={filter?.per_page} currentPage={filter.page}
+                                pageSize={filter.per_page} currentPage={filter.page}
                                 setPage={(page: number) => setFilter(prevState => {
                                     return { ...prevState, page: page };
                                 })} />

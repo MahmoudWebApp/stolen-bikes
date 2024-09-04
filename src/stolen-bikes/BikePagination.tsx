@@ -31,7 +31,7 @@ const BikePagination: React.FC<IProps> = ({ pageSize, currentPage, setPage }) =>
       const end = Math.min(start + buttonsPerPage, totalButtons);
       const visibleButtons = Array.from({ length: totalButtons }, (_, index) => index).slice(start, end);
 
-      setPaginationList(visibleButtons.map(index => (
+      setPaginationList(visibleButtons?.map(index => (
         <button
           key={`key-${newPageGroup}-${index}`}
           className={`btn-page w-[40px] h-[40px] rounded-lg flex justify-center items-center
