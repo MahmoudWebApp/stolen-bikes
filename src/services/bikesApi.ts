@@ -13,7 +13,7 @@ export const BikesApi = createApi({
       query: (filter: IFilter) =>
         `${baseUrl}?page=${filter.page}&per_page=${filter.per_page}
       ${
-        filter.title !== "" ? `&query=${filter.title}` : ""
+        filter.title !== "" ? `&query=${filter.title}` : null
       }&location=Munich&stolenness=stolen`,
     }),
   }),
