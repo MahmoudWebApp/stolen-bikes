@@ -30,8 +30,8 @@ const StolenBikes: React.FC = () => {
             <div className="head text-center my-4">
                 <h2 className="text-3xl font-bold text-blue-950">Bike Stolen Apps</h2>
             </div>
-            <div className="search-box my-2 gap-x-6 flex items-center justify-between px-12">
-                <div className="w-[40%]">
+            <div className="search-box my-2 gap-x-6 flex items-center justify-between md:px-12 px-2">
+                <div className="md:w-[40%] w-full">
                     <SearchTitle setTitle={(title: string) => setFilter(prevState => {
                         return { ...prevState, title: title }
                     })} />

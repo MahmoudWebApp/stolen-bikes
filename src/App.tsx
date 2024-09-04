@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Provider store={store}>
-        <main className='px-48 py-4'>
+        <main className='lg:px-48 px-6 py-4'>
           <StolenBikes />
         </main>
       </Provider>

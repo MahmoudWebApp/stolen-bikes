@@ -9,18 +9,18 @@ interface IProps {
 }
 const BikeCard: React.FC<IProps> = (props) => {
   return (
-    <div className="bike-card  flex  shadow-md rounded-lg bg-slate-200">
-      <div className="img-box w-[25%]  ">
+    <div className="bike-card md:p-0 px-6  py-3 flex md:flex-row flex-col gap-y-4 items-center justify-center shadow-md rounded-lg bg-slate-200">
+      <div className="img-box md:w-[25%]  w-full ">
 
         <img src={props.imgSrc ? props.imgSrc : imgDefault} alt={props.title}
           className="max-h-[150px] min-h-[150px] object-cover" />
       </div>
-      <div className="content w-[75%] flex justify-between py-2 px-3">
-        <div className="flex flex-col gap-y-4 w-[38%]">
+      <div className="content md:w-[75%] w-full flex md:flex-row flex-col gap-y-4 justify-between py-2 px-3">
+        <div className="flex flex-col gap-4 md:w-[38%] w-full">
           <h3 className=' text-bold text-xl text-blue-900'>{props.title}</h3>
           <p className='text-gray-600 text-base'>{props.description}</p>
         </div>
-        <div className="flex flex-col gap-y-4 w-[58%]">
+        <div className="flex flex-col gap-4 md:w-[58%] w-full">
           <div className="date-stolen">
             <div className="flex items-center gap-x-1">
               <span >
