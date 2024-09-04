@@ -18,7 +18,7 @@ const StolenBikes: React.FC = () => {
     const { bikes, isLoading, isFetching } = useGetStolenBikesQuery<{ bikes: IBike[], isLoading: boolean, isFetching: boolean }>
         ({ ...filter }, {
             selectFromResult: ({ data, isLoading, isFetching }) => ({
-                bikes: data?.bikes,
+                bikes: data.bikes,
                 isLoading: isLoading,
                 isFetching: isFetching
             }),
@@ -43,7 +43,7 @@ const StolenBikes: React.FC = () => {
             </div>
             {(isLoading || isFetching) ?
                 <Loader />
-                : bikes.length !== 0 ? (
+                : bikes?.length !== 0 ? (
                     <div className="flex flex-col items-center gap-y-4 w-full">
                         <div className="bike-page flex flex-col gap-y-3 w-full">
                             {bikes?.map(b => <BikeCard
