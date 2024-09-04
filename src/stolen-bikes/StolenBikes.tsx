@@ -2,7 +2,7 @@ import { IBike, IFilter } from "@/models/bikes.model";
 import { useGetStolenBikesQuery } from "@/services/bikesApi";
 import { useState } from "react";
 import BikeCard from "./BikeCard";
-// import BikePagination from "./BikePagination";
+ import BikePagination from "./BikePagination";
 import Loader from "./Loader";
 import SearchTitle from "./SearchTitle";
 // import DateRangeSearch from "./DateRangeSearch";
@@ -18,7 +18,7 @@ const StolenBikes: React.FC = () => {
     const { bikes, isLoading, isFetching } = useGetStolenBikesQuery<{ bikes: IBike[], isLoading: boolean, isFetching: boolean }>
         ({ ...filter }, {
             selectFromResult: ({ data, isLoading, isFetching }) => ({
-                bikes: data.bikes,
+                bikes: data?.bikes,
                 isLoading: isLoading,
                 isFetching: isFetching
             }),
@@ -55,13 +55,13 @@ const StolenBikes: React.FC = () => {
                                 dateStolenReport={`${b.stolen_coordinates}`}
                                 location={b.stolen_location} />)}
                         </div>
-                        {/* {filter.title !== '' ? <></> :
+                         {filter?.title !== '' ? <></> :
                             <BikePagination
                                 pageSize={filter.per_page} currentPage={filter.page}
                                 setPage={(page: number) => setFilter(prevState => {
                                     return { ...prevState, page: page };
                                 })} />
-                        } */}
+                        } 
 
                     </div>) : (
                     <div className="empty text-center ">
