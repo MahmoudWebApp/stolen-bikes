@@ -3,11 +3,12 @@ interface IProps {
   imgSrc: string;
   title: string;
   description: string;
-  dateStolen: string;
+  dateStolen: number;
   dateStolenReport: string;
   location: string
 }
 const BikeCard: React.FC<IProps> = (props) => {
+
   return (
     <div className="bike-card md:p-0 px-6  py-3 flex md:flex-row flex-col gap-y-4 items-center justify-center shadow-md rounded-lg bg-slate-200">
       <div className="img-box md:w-[25%]  w-full ">
@@ -40,7 +41,7 @@ const BikeCard: React.FC<IProps> = (props) => {
                 Date of the theft:
               </span>
               <p>
-                {props.dateStolen}
+             {(new Date(props.dateStolen * 1000)).toLocaleDateString()}
               </p>
             </div>
 
