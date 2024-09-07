@@ -51,7 +51,7 @@ const StolenBikes: React.FC = () => {
                                 imgSrc={b.thumb}
                                 title={b.title}
                                 description={b.description}
-                                dateStolen={`${b.date_stolen}`}
+                                dateStolen={b.date_stolen}
                                 dateStolenReport={`${b.stolen_coordinates}`}
                                 location={b.stolen_location} />)}
                         </div>
